@@ -3,6 +3,12 @@
 import connectDb from "./databaseConnection";
 connectDb()
 .then(()=> {
+
+    app.on((error)=> {
+        
+        console.log("Database is connected but can not respond: ", error);
+
+    })
     app.listen(process.env.PORT || 8000, ()=> {
         console.log(`Database has connected Successfully at host ${process.env.PORT}`); 
     })
