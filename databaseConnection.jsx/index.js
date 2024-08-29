@@ -1,3 +1,21 @@
+// second approch after importing it 
+
+import connectDb from "./databaseConnection";
+connectDb()
+.then(()=> {
+    app.listen(process.env.PORT || 8000, ()=> {
+        console.log(`Database has connected Successfully at host ${process.env.PORT}`); 
+    })
+})
+.catch((error)=> {
+    console.log(`Database Server Connection Failed!! `, error);
+    
+})
+
+
+
+
+
 
 //first approach for connecting database
 
